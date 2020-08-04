@@ -1,0 +1,38 @@
+
+<div class="row container-fluid" >
+    <div class="col-md-6">
+        <ag-grid-angular
+        style="width: 500px; height: 500px;"
+        class="ag-theme-alpine"
+        [rowData]="rowData | async"
+        [columnDefs]="columnDefs"
+        >
+    </ag-grid-angular>
+    </div>
+    <div class="col-md-6">
+        <form (submit)="addToTable()">
+            <div class="form-group">
+              <label for="exampleInputEmail1">make</label>
+              <input type="text" class="form-control"  [(ngModel)]="localRowData.make"  [ngModelOptions]="{standalone: true}" aria-describedby="emailHelp">
+             </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">model</label>
+                <input type="text" class="form-control"  [(ngModel)]="localRowData.model" [ngModelOptions]="{standalone: true}" aria-describedby="emailHelp">
+                
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Price</label>
+                <input type="number" class="form-control"  [(ngModel)]="localRowData.price" [ngModelOptions]="{standalone: true}" aria-describedby="emailHelp">
+              </div>
+           
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="deleteData()">Delete</button>
+</div>
+
+
+
+
+
+
